@@ -1,11 +1,15 @@
 body {
   background-color: rgb(0, 0, 0);
   color: white;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .board-container {
-  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 :root {
@@ -26,13 +30,3 @@ body {
   /* visibility: hidden; */
   color: var(--cell-background-color);
 }
-
-/* .hidden {
-    background-color: #444;
-  }
-  
-
-  .revealed {
-    background-color: #fff;
-  }
-   */
