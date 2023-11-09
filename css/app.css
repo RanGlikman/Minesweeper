@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  text-align: center;
+}
+
+.board-container {
+  margin: auto;
+}
+
+:root {
+  --cell-background-color: green;
+}
+
+.cell {
+  background-color: var(--cell-background-color);
+  width: 5ex;
+  height: 5ex;
+  border: 1px solid #333;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.hidden-content {
+  /* visibility: hidden; */
+  color: var(--cell-background-color);
+}
+
+/* .hidden {
+    background-color: #444;
+  }
+  
+
+  .revealed {
+    background-color: #fff;
+  }
+   */
