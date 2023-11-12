@@ -47,6 +47,7 @@ function buildBoard() {
     for (let j = 0; j < size; j++) {
       board[i][j] = EMPTY;
     }
+    console.log('Board built:', board);
   }
 
   function puttingMinesInRandomCells() {
@@ -71,7 +72,7 @@ function buildBoard() {
       }
     }
   }
-
+  console.log('Mines placed:', board);
   return board;
 }
 
@@ -90,18 +91,28 @@ function countingMines(rowIdx, colIdx) {
 }
 
 function renderBoard(board) {
-  let strHTML = "";
+  let strHTML = '';
   for (let i = 0; i < board.length; i++) {
-    strHTML += "<tr>\n";
+    strHTML += '<tr>';
     for (let j = 0; j < board[i].length; j++) {
-      const className = `cell cell-${i}-${j}`;
-      strHTML += `<td class="${className}">${board[i][j]}</td>\n`;
+      strHTML += `<td class="cell cell-${i}-${j}" onclick="cellClicked(this)">${board[i][j]}</td>`;
     }
-    strHTML += "</tr>\n";
+    strHTML += '</tr>';
   }
-  const elTable = document.querySelector(".board");
+  const elTable = document.querySelector('.board');
   elTable.innerHTML = strHTML;
 }
 
+function cellClicked(cellElement, row, col){
+  let strHTML = '';
+  console.log(`Cell clicked: [${row}, ${col}]`, cellElement);
+  console.log('HTML for board:', strHTML);
+  // cellElement.classList.remove('hidden-content')
+  cellElement.classList.add("revealed")
+  console.log('HTML for board:', strHTML);
+}
+
+
 const myBoard = buildBoard();
 renderBoard(myBoard);
+console.log('Render board called');
